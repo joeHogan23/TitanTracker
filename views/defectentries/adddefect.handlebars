@@ -1,0 +1,60 @@
+<div class="defect-form">
+    <div class="col-md-6-auto">
+        <div class="card card-body">
+            <form class="form-group" action="/adddefect/{{ticketnumber}}?" method="POST">
+  <div>
+                    <div class = "row" style = "padding-bottom: 20px;">                
+                    <div class = "col"><p>Ticket Number: {{ticketnumber}}</p></div>
+                    <div class = "col"><label>Assigned To</label>
+                    <input type="text" name="assigned_to"></div>
+                    </div>
+                </div>
+                <label>Defect Title</label>
+                <div style = "padding-bottom: 20px;"><input class="form-control" type="text" name="defect_title" placeholder="Enter Defect Title, Including Key Details" required>
+                </div>
+                <br>
+
+                <label>Defect Description</label>
+                <textarea class="form-control" name="defect_description" id="defect-description"
+                    placeholder ="Enter Detailed Defect Description" required></textarea>
+                <br>
+<div class = "row">
+                <div class="col-md-3">
+                    <div class="row-md-2">
+                        <label>Priority</label>
+                        <select name="severity" id="severity" onloadstart="selected(#severity, {{severity}})">
+                            <option value="Critical">Critical</option>
+                            <option value="High">High</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Low">Low</option>
+                            <option value="NTH">NTH</option>
+                        </select>
+                    </div>
+
+                    <div class="row-md-2">
+
+                        <label>Status</label>
+                        <select name="status" id="status">
+                            <option>Open</option>
+                            <option>In Progress</option>
+                            <option>Closed</option>
+                        </select>
+                    </div>
+
+                <br>
+                <div class = "row" style="margin:auto;">
+                <input type="submit" class="btn btn-primary" value="Submit" style = "margin-bottom: 10px; style=padding:10px; margin-right:20px;">
+                <input type="button" class="btn btn-dark" data-toggle="collapse" value="View Logs" href="#collapse" role="button" aria-expanded="false"
+                    aria-controls="collapseExample" style="padding:10px; margin-bottom: 10px;">
+                </a>
+            </div>
+            </div>
+            <div class = "col">
+                <p>Steps to Recreate</p>
+                <textarea name ="steps_to_recreate" style="width:100%; height: 100px;"></textarea>
+            </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

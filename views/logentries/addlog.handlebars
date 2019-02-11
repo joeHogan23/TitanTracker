@@ -1,0 +1,40 @@
+{{#each defect}}
+<div class="jumbotron">
+    <div class="col-md-6-auto">
+        <div class="card card-body">
+            <form class="form-group" action="/submitlog/{{ticket_number}}?" method="POST">
+
+                <div class ="row" style="margin-left: 0px; "><h4 class="col-sm-0">Ticket Number: </h4> <p class = "col-md-8" style="width:200px;" name="ticket_number">{{ticket_number}}</p>
+                <h4 class = "col-sm-0">Log Number: </h4><p class = "col" name="log_number">{{log_number}}</p></div>
+                <br>
+                <h6>Log Title</h6>
+                <input class="form-control" type="text" name="log_title" required>
+                <br>
+
+                <h6>Notes</h6>
+                <textarea class="form-control" name="update_description" id="defect-description" required></textarea>
+                <br>
+
+                <div class ="row">
+                <div class="col-md-10">
+                    <label>Current Status of Defect</label>
+                    <div><select class="form" name="status">
+                            <option>Open</option>
+                            <option>In Progress</option>
+                            <option>Closed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+            <input type="submit" class="btn btn-primary" style="margin-top: 20px;" value="Submit">
+        </div>
+
+                </div>
+
+
+        </div>
+        </form>
+    </div>
+</div>
+                {{/each}}

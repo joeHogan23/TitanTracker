@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-6-auto">
+        <div class="card card-body">
+            <form class="form-group" action="/addgame" method="POST">
+                <label>Title of Game</label>
+                <input type="text" name="title" value ="{{entries.title}}" required>
+                <br>
+                <label>Genre</label>
+                <textarea class = "form-control" name="genre"  required>{{entries.genre}}</textarea>
+                <br>
+                <button type="submit" class = "btn btn-primary">Update Game</button>
+            </form>
+        </div>
+    </div>
+</div>

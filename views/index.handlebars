@@ -1,0 +1,24 @@
+
+<div class ="jumbotron">
+    <h1 class ="jumbotron text-center" >Welcome to the GameApp Page!</h1>
+    <p>These are the current favorite games</p>
+    {{#each entries}}
+    <div class = 'entries'>
+        <p class = "font-weight-bold">Game: {{title}}</p>
+        <p>Genre: {{genre}}</p>
+        <p>Date: {{date}}</p><br>
+        
+        <form method = "POST" action ="/{{id}}?_method=Edit">
+            <input type="hidden" name="_method" value="EDIT">
+            <input type="submit" value="Delete" class = "btn btn-danger">
+        </form>
+
+        <form method = "POST" action ="/{{id}}?_method=Delete">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class = "btn btn-danger">
+        </form>
+    </div>
+
+    {{else}}
+    {{/each}}
+</div>
